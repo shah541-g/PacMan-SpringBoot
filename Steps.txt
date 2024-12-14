@@ -1,0 +1,4 @@
+1) Change Map
+2) Change L and R condition with U and Down condition 
+3) remove second pacman from game
+4) remove Q
