@@ -1,4 +1,4 @@
-package SinglePlayerRunner;
+package Runner.SinglePlayerRunner;
 
 import javax.swing.JFrame;
 import java.util.logging.Logger;

@@ -1,4 +1,4 @@
-package MultiPlayerRunner;
+package Runner.MultiPlayerRunner;
 
 import javax.swing.JFrame;
 import java.util.logging.Logger;
