@@ -9,7 +9,7 @@ import CustomExceptions.GameExceptions.NullEntityException;
 
 public class CollisionChecker {
 
-    private static final Logger logger = LoggerUtility.getLogger("CollisionChecker", "logs/CollisionChecker.log");
+    private static final Logger logger = LoggerUtility.getLogger("CollisionChecker", "CollisionChecker.log");
 
     public static boolean collisionWithStaticEntity(MoveableEntity moveableEntity, StaticEntity staticEntity) {
         try {

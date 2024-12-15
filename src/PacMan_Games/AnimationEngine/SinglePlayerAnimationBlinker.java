@@ -22,7 +22,7 @@ public class SinglePlayerAnimationBlinker {
     private static int currentFrame = 0;
 
     // Logger for this class
-    private static final Logger logger = LoggerUtility.getLogger("SinglePlayerGame", "logs/SinglePlayerGame.log");
+    private static final Logger logger = LoggerUtility.getLogger("SinglePlayerGame", "SinglePlayerGame.log");
 
     public static int getCurrentFrame() {
         return currentFrame;

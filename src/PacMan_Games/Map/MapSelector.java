@@ -8,7 +8,7 @@ import Utils.LoggerUtility;
 
 public class MapSelector {
 
-    private static final Logger logger = LoggerUtility.getLogger("MapSelector", "logs/MapSelector.log");
+    private static final Logger logger = LoggerUtility.getLogger("MapSelector", "MapSelector.log");
 
     public static Map selectRandomMap(Maps maps) {
         if (maps.getMapCount() == 0) {

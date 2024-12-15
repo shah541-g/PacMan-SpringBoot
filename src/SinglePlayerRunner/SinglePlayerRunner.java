@@ -7,11 +7,12 @@ import java.util.logging.Level;
 import PacMan_Games.Game.SinglePlayerGame.SinglePayerGameController;
 import PacMan_Games.Game.SinglePlayerGame.SinglePlayerGame;
 import PacMan_Games.Game.SinglePlayerGame.SinglePlayerGameBoard;
+import Utils.LoggerUtility;
 
 public class SinglePlayerRunner {
 
     // Logger instance for logging events
-    private static final Logger LOGGER = Logger.getLogger(SinglePlayerRunner.class.getName());
+    private static final Logger LOGGER = LoggerUtility.getLogger("SinglePlayerRunner", "SinglePlayerRunner.log");
 
     public SinglePlayerRunner() {
         try {

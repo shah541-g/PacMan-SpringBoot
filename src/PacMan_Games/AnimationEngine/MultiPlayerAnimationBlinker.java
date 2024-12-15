@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 
 public class MultiPlayerAnimationBlinker {
 
-    private static final Logger logger = LoggerUtility.getLogger("MultiPlayerAnimation", "logs/MultiPlayerAnimation.log");
+    private static final Logger logger = LoggerUtility.getLogger("MultiPlayerAnimation", "MultiPlayerAnimation.log");
 
     private static int currentFrame = 0;
 

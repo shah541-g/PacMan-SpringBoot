@@ -68,11 +68,11 @@ public class SinglePlayerGameInitializer {
                     game.getGhosts().add(ghost);
                 }
                 else if(tileMapChar == 'P'){ // PacMan 1
-                    System.out.println("Yellow pacman ban raha ha");
+                    
                     Pacman pacman = new Pacman(ImageDimension.PACMAN, x,y,EntityRepresentation.yellowPacman,ImagesLoader.loadPacMan1LeftImage(),x,y, Directions.LEFT.getSymbol(), 0,0);
                     
                     game.setYellowPacman(pacman);
-                    System.out.println("Yellow pacman ban gaya ha");
+                    
                 }
                 else if(tileMapChar == ' '){ // food
 

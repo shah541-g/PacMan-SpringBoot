@@ -5,12 +5,13 @@ import java.util.logging.Logger;
 import java.util.logging.Level;
 
 import PacMan_Games.Game.MultiPlayerGame.MultiPlayerGameController;
+import Utils.LoggerUtility;
 import PacMan_Games.Game.MultiPlayerGame.MultiPlayerGame;
 import PacMan_Games.Game.MultiPlayerGame.MultiPlayerGameBoard;
 
 public class MultiPlayerRunner {
 
-    private static final Logger LOGGER = Logger.getLogger(MultiPlayerRunner.class.getName());
+    private static final Logger LOGGER = LoggerUtility.getLogger("MultiPlayerRunner","MultiPlayerRunner.log");
 
     public MultiPlayerRunner() {
         try {

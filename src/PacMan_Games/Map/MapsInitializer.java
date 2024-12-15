@@ -9,7 +9,7 @@ import Utils.LoggerUtility;
 
 public class MapsInitializer {
 
-    private static final Logger logger = LoggerUtility.getLogger("MapsInitializer", "logs/MapsInitializer.log");
+    private static final Logger logger = LoggerUtility.getLogger("MapsInitializer", "MapsInitializer.log");
 
     public static void initializeMultiplayerMaps(Maps maps) {
         try {

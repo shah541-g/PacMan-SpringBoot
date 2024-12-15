@@ -8,7 +8,7 @@ import Utils.LoggerUtility;
 
 public class ImagesLoader {
 
-    private static final Logger logger = LoggerUtility.getLogger("ImagesLoader", "logs/ImagesLoader.log");
+    private static final Logger logger = LoggerUtility.getLogger("ImagesLoader", "ImagesLoader.log");
 
     private static Image loadImage(String filePath) {
         try {

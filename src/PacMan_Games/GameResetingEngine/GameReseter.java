@@ -11,7 +11,7 @@ import Utils.LoggerUtility;
 
 public class GameReseter {
 
-    private static final Logger logger = LoggerUtility.getLogger("GameReseter", "logs/GameReseter.log");
+    private static final Logger logger = LoggerUtility.getLogger("GameReseter", "GameReseter.log");
 
     public static void resetMultiPlayerGhostsPositions(HashSet<Ghost> ghosts) {
         try {
