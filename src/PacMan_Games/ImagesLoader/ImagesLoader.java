@@ -92,6 +92,12 @@ public class ImagesLoader {
         return loadImage(filePath);
     }
 
+     // logo Image
+     public static Image loadLogo() {
+        String filePath = System.getProperty("user.dir") + "/sprites/logo/pacman.png";
+        return loadImage(filePath);
+    }
+
     public static Image[] loadRedDyingFrames(int totalFrames) {
         String baseDir = System.getProperty("user.dir") + "/sprites/";
         return loadDyingFrames(baseDir + "pacmans/red pacman/dying_frame_", totalFrames);
