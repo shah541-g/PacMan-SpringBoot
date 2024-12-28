@@ -14,9 +14,6 @@ public class LoggerUtility {
         ensureLogDirectoryExists();
     }
 
-    /**
-     * Get or create a logger instance.
-     */
     public static Logger getLogger(String name, String logFileName) {
         return loggers.computeIfAbsent(name, loggerName -> createLogger(loggerName, logFileName));
     }

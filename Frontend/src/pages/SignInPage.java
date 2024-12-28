@@ -1,6 +1,8 @@
 package pages;
 
 import com.sun.tools.javac.Main;
+import org.json.JSONObject;
+import player.Player;
 import utils.requestUtilities.HttpUtil;
 import widgetFactories.ButtonFactory;
 import widgetFactories.LabelFactory;
@@ -14,9 +16,9 @@ import java.awt.event.ActionListener;
 
 import static validations.EmailValidator.validateEmail;
 import static validations.PasswordValidator.validatePassword;
-import static validations.UsernameValidator.validateUsername;
 import static widgetFactories.FieldFactory.addPasswordField;
 import static widgetFactories.FieldFactory.addTextFieldWithPlaceholder;
+import static widgetFactories.FrameFactory.getFrame;
 
 public class SignInPage {
 
@@ -30,10 +32,7 @@ public class SignInPage {
 
 
 
-        frame = new JFrame("Sign In");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 500);
-        frame.setLocationRelativeTo(null);
+        frame = getFrame("Sign In", 400, 500, JFrame.EXIT_ON_CLOSE);
 
 
         // Create the top panel with a title
@@ -102,13 +101,18 @@ public class SignInPage {
 
 
             // Manually construct the JSON request body as a string
-            String jsonRequestBody = "{\"email\": \"" + email + "\", \"password\": \"" + password + "\"}";
+            JSONObject jsonRequestBody = new JSONObject();
+            jsonRequestBody.put("email", email);
+            jsonRequestBody.put("password", password);
 
-            boolean requestSent = HttpUtil.sendPostRequest(
+            String requestBody = jsonRequestBody.toString();
+
+            JSONObject response = HttpUtil.sendPostRequestWithResponse(
                     "http://localhost:8080/api/users/signin",  // URL
-                    jsonRequestBody  // Request body as string
+                    requestBody  // Request body as string
             );
-            if(requestSent){
+            if(response!=null){
+                Player.setEmail(email);
                 frame.dispose();
                 // Start the MainPage
                 SwingUtilities.invokeLater(MainPage::new);

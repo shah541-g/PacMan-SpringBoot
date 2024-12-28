@@ -2,6 +2,8 @@ package validations;
 
 public class UsernameValidator {
 
+    private static final String REGEX = "^[a-zA-Z0-9_]+$";
+
     /**
      * Validates the username according to the following rules:
      * - At least 3 characters long
@@ -21,7 +23,8 @@ public class UsernameValidator {
         }
 
         // Check that the username matches the allowed pattern: letters, digits, and underscores
-        return username.matches("^[a-zA-Z0-9_]+$");
+
+        return username.matches(REGEX);
     }
 
 

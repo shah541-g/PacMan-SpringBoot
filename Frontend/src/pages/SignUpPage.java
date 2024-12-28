@@ -1,6 +1,8 @@
 package pages;
 
 
+import org.json.JSONObject;
+import player.Player;
 import utils.requestUtilities.HttpUtil;
 import widgetFactories.ButtonFactory;
 import widgetFactories.LabelFactory;
@@ -19,6 +21,7 @@ import static validations.PasswordValidator.validatePassword;
 import static validations.UsernameValidator.validateUsername;
 import static widgetFactories.FieldFactory.addPasswordField;
 import static widgetFactories.FieldFactory.addTextFieldWithPlaceholder;
+import static widgetFactories.FrameFactory.getFrame;
 
 public class SignUpPage {
     private JFrame frame;
@@ -34,11 +37,7 @@ public class SignUpPage {
 
 
 
-        frame = new JFrame("Create Account");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 500);
-        frame.setLocationRelativeTo(null);
-
+        frame = getFrame("Create Account", 400,500,JFrame.EXIT_ON_CLOSE);
 
         // Create the top panel with a title
         JPanel topPanel = PanelFactory.createTopPanel("Create Account.");
@@ -112,13 +111,22 @@ public class SignUpPage {
         if(isValid() && validateUsername(username) && validatePassword(password) && validateEmail(email)){
 
 
-            String jsonRequestBody = "{\"username\": \"" + username + "\", \"password\": \"" + password + "\", \"email\": \"" + email + "\"}";
 
+            JSONObject jsonRequestBody = new JSONObject();
+
+            jsonRequestBody.put("username", username);
+            jsonRequestBody.put("password", password);
+            jsonRequestBody.put("email", email);
+
+            String jsonString = jsonRequestBody.toString();
+            System.out.println(jsonString);
             boolean requestSent = HttpUtil.sendPostRequest(
                     "http://localhost:8080/api/users/signup",  // URL
-                    jsonRequestBody  // Request body as string
+                    jsonString  // Request body as string
             );
             if(requestSent){
+                Player.setUsername(username);
+                Player.setEmail(email);
                 frame.dispose();
                 // Start the MainPage
                 SwingUtilities.invokeLater(MainPage::new);

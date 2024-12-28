@@ -3,7 +3,8 @@ package game.pacmanGames.Game.SinglePlayerGame;
 import java.awt.*;
 import java.util.HashSet;
 import game.pacmanGames.movementEngine.MovementManager;
-import javax.swing.JPanel;
+
+import javax.swing.*;
 
 import customExceptions.gameExceptions.AnimationFrameException;
 import customExceptions.gameExceptions.InvalidStateException;
@@ -14,6 +15,7 @@ import game.pacmanGames.entity.Enums.Directions;
 import game.pacmanGames.gameResetingEngine.GameReseter;
 import game.pacmanGames.animationEngine.SinglePlayerAnimationBlinker;
 import game.pacmanGames.animationEngine.DeathFramesHandler;
+import pages.GameOutcomePage;
 
 public class SinglePlayerGame {
     private HashSet<Wall> walls;
@@ -121,10 +123,13 @@ public class SinglePlayerGame {
         moveGhosts();
         foodEating();
         
-        if(foods.isEmpty()){
-            init(gameController);
-           
-        }
+//        if(foods.isEmpty()){
+////            init(gameController);
+//           SinglePlayerGameStatus.setGameOutcome("Win");
+//            SwingUtilities.invokeLater(() -> {
+//                new GameOutcomePage("win");
+//            });
+//        }
         
     }
 

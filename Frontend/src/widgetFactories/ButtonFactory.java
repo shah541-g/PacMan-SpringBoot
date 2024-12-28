@@ -25,5 +25,12 @@ public class ButtonFactory {
         return buttonBox;
     }
 
+    public static JButton getTextButton(JFrame gameFrame, String text) {
+        JButton playAgainButton = new JButton(text);
+        playAgainButton.setFont(new Font("Arial", Font.PLAIN, 16));
+        playAgainButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        return playAgainButton;
+    }
+
 
 }

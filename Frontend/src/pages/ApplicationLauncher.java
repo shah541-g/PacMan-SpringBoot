@@ -12,7 +12,9 @@ import javax.swing.JLabel;
 import javax.swing.JProgressBar;
 import javax.swing.SwingUtilities;
 
-import game.pacmanGames.imagesLoader.ImagesLoader;
+
+import static game.pacmanGames.imagesLoader.ImagesLoader.loadLogo;
+import static widgetFactories.FrameFactory.getSplashScreenFrame;
 
 public class ApplicationLauncher {
 
@@ -21,22 +23,31 @@ public class ApplicationLauncher {
     }
 
     public void launchApplication(){
-        JFrame frame = new JFrame("Splash Screen");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(1280, 656); // Match the image resolution
-        frame.setLocationRelativeTo(null);
-        frame.setLayout(null);
 
-        // Set the background color of the frame
-        frame.getContentPane().setBackground(Color.BLACK);
+        // create splash frame
+       JFrame frame = getSplashScreenFrame();
 
-
-       Image scaledImage = ImagesLoader.loadLogo().getScaledInstance(frame.getWidth(), 500, Image.SCALE_SMOOTH);
+       // create logo image
+       Image scaledImage = loadLogo().getScaledInstance(frame.getWidth(), 500, Image.SCALE_SMOOTH);
        JLabel imageLabel = new JLabel(new ImageIcon(scaledImage));
        imageLabel.setBounds(0, 0, frame.getWidth(), 500); // Place image at the top
        frame.add(imageLabel);
 
         // Create a progress bar
+        JProgressBar progressBar = getProgressbar(frame);
+        uiSetupForProgressBar(progressBar);
+        frame.add(progressBar);
+
+        // Make the frame visible
+        frame.setVisible(true);
+
+        // Simulate progress bar filling
+        simulateProgressBarAndLaunchApplication(progressBar,frame);
+
+    }
+
+
+    private JProgressBar getProgressbar(JFrame frame){
         JProgressBar progressBar = new JProgressBar();
         progressBar.setBounds((frame.getWidth() - 600) / 2, 520, 600, 30); // Center the progress bar
         progressBar.setForeground(Color.YELLOW); // Set fill color
@@ -44,7 +55,10 @@ public class ApplicationLauncher {
         progressBar.setValue(0);
         progressBar.setStringPainted(true); // Show progress percentage
 
-        // Custom UI to change progress text color dynamically
+        return progressBar;
+    }
+
+    private void uiSetupForProgressBar(JProgressBar progressBar){
         progressBar.setUI(new javax.swing.plaf.basic.BasicProgressBarUI() {
             @Override
             protected void paintDeterminate(Graphics g, JComponent c) {
@@ -52,12 +66,12 @@ public class ApplicationLauncher {
                 String progressText = progressBar.getString();
 
                 // Dynamically change the color based on progress
-                
+
                 Color textColor;
 
-                
-                    textColor = Color.BLACK;  // Use black for the first half of the progress
-               
+
+                textColor = Color.BLACK;  // Use black for the first half of the progress
+
 
                 // Set the color of the progress text
                 g.setColor(textColor);
@@ -71,13 +85,10 @@ public class ApplicationLauncher {
                 g.drawString(progressText, x, y);
             }
         });
+    }
 
-        frame.add(progressBar);
+    private void simulateProgressBarAndLaunchApplication(JProgressBar progressBar, JFrame frame){
 
-        // Make the frame visible
-        frame.setVisible(true);
-
-        // Simulate progress bar filling
         new Thread(() -> {
             for (int i = 0; i <= 100; i++) {
                 try {
@@ -90,8 +101,12 @@ public class ApplicationLauncher {
             // After progress bar completes, run the new App
             SwingUtilities.invokeLater(() -> {
                 frame.dispose(); // Close the splash screen
-                new SignUpPage(); // Start the new app
+                startApplication();
             });
         }).start();
+    }
+
+    private void startApplication(){
+        new SignUpPage(); // Start the new app
     }
 }

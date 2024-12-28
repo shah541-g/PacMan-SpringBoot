@@ -1,0 +1,192 @@
+Dec 25, 2024 9:00:23 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner <init>
+INFO: Launching Multi game.Player Pac-Man game...
+Dec 25, 2024 9:00:23 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Initializing game frame...
+Dec 25, 2024 9:00:23 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 25, 2024 9:00:23 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Setting up game controller and game...
+Dec 25, 2024 9:00:23 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Game initialization complete.
+Dec 25, 2024 9:00:23 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Game window is now visible. Starting the game loop...
+Dec 26, 2024 4:32:41 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner <init>
+INFO: Launching Multi game.Player Pac-Man game...
+Dec 26, 2024 4:32:41 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Initializing game frame...
+Dec 26, 2024 4:32:41 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 26, 2024 4:32:41 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Setting up game controller and game...
+Dec 26, 2024 4:32:41 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Game initialization complete.
+Dec 26, 2024 4:32:41 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Game window is now visible. Starting the game loop...
+Dec 26, 2024 6:41:07 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner <init>
+INFO: Launching Multi game.Player Pac-Man game...
+Dec 26, 2024 6:41:07 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Initializing game frame...
+Dec 26, 2024 6:41:07 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 26, 2024 6:41:07 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Setting up game controller and game...
+Dec 26, 2024 6:41:07 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Game initialization complete.
+Dec 26, 2024 6:41:07 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Game window is now visible. Starting the game loop...
+Dec 26, 2024 6:44:57 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner <init>
+INFO: Launching Multi game.Player Pac-Man game...
+Dec 26, 2024 6:44:58 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Initializing game frame...
+Dec 26, 2024 6:44:58 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 26, 2024 6:44:58 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Setting up game controller and game...
+Dec 26, 2024 6:44:58 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Game initialization complete.
+Dec 26, 2024 6:44:58 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner launchMultiPlayerGame
+INFO: Game window is now visible. Starting the game loop...
+Dec 27, 2024 9:05:26 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Starting multiplayer game with Player ID: 1 and Pac-Man color: yellow
+Dec 27, 2024 9:05:26 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Initializing game frame for multiplayer...
+Dec 27, 2024 9:05:26 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 27, 2024 9:05:26 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Setting up game controller and multiplayer game...
+Dec 27, 2024 9:05:26 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game initialization complete for Player 1
+Dec 27, 2024 9:05:26 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game window is now visible. Starting the multiplayer game loop...
+Dec 27, 2024 9:29:11 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Starting multiplayer game with Player ID: 1 and Pac-Man color: yellow
+Dec 27, 2024 9:29:12 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Initializing game frame for multiplayer...
+Dec 27, 2024 9:29:12 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 27, 2024 9:29:12 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Setting up game controller and multiplayer game...
+Dec 27, 2024 9:29:12 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game initialization complete for Player 1
+Dec 27, 2024 9:29:12 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game window is now visible. Starting the multiplayer game loop...
+Dec 28, 2024 3:34:30 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Starting multiplayer game with Player ID: -1 and Pac-Man color: null
+Dec 28, 2024 3:34:30 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Initializing game frame for multiplayer...
+Dec 28, 2024 3:34:30 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 28, 2024 3:34:30 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Setting up game controller and multiplayer game...
+Dec 28, 2024 3:34:30 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game initialization complete for Player -1
+Dec 28, 2024 3:34:30 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game window is now visible. Starting the multiplayer game loop...
+Dec 28, 2024 3:34:35 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Starting multiplayer game with Player ID: -1 and Pac-Man color: null
+Dec 28, 2024 3:34:35 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Initializing game frame for multiplayer...
+Dec 28, 2024 3:34:35 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 28, 2024 3:34:35 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Setting up game controller and multiplayer game...
+Dec 28, 2024 3:34:35 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game initialization complete for Player -1
+Dec 28, 2024 3:34:35 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game window is now visible. Starting the multiplayer game loop...
+Dec 28, 2024 3:36:56 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Starting multiplayer game with Player ID: -1 and Pac-Man color: null
+Dec 28, 2024 3:36:56 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Initializing game frame for multiplayer...
+Dec 28, 2024 3:36:56 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 28, 2024 3:36:56 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Setting up game controller and multiplayer game...
+Dec 28, 2024 3:36:56 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game initialization complete for Player -1
+Dec 28, 2024 3:36:56 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game window is now visible. Starting the multiplayer game loop...
+Dec 28, 2024 3:37:01 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Starting multiplayer game with Player ID: -1 and Pac-Man color: null
+Dec 28, 2024 3:37:01 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Initializing game frame for multiplayer...
+Dec 28, 2024 3:37:01 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 28, 2024 3:37:01 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Setting up game controller and multiplayer game...
+Dec 28, 2024 3:37:01 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game initialization complete for Player -1
+Dec 28, 2024 3:37:01 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game window is now visible. Starting the multiplayer game loop...
+Dec 28, 2024 3:37:06 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Starting multiplayer game with Player ID: -1 and Pac-Man color: null
+Dec 28, 2024 3:37:06 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Initializing game frame for multiplayer...
+Dec 28, 2024 3:37:06 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 28, 2024 3:37:06 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Setting up game controller and multiplayer game...
+Dec 28, 2024 3:37:06 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game initialization complete for Player -1
+Dec 28, 2024 3:37:06 AM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game window is now visible. Starting the multiplayer game loop...
+Dec 28, 2024 12:21:41 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Starting multiplayer game with Player ID: -1 and Pac-Man color: null
+Dec 28, 2024 12:21:41 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Initializing game frame for multiplayer...
+Dec 28, 2024 12:21:41 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 28, 2024 12:21:41 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Setting up game controller and multiplayer game...
+Dec 28, 2024 12:21:41 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game initialization complete for Player -1
+Dec 28, 2024 12:21:41 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game window is now visible. Starting the multiplayer game loop...
+Dec 28, 2024 12:21:46 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Starting multiplayer game with Player ID: -1 and Pac-Man color: null
+Dec 28, 2024 12:21:46 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Initializing game frame for multiplayer...
+Dec 28, 2024 12:21:46 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 28, 2024 12:21:46 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Setting up game controller and multiplayer game...
+Dec 28, 2024 12:21:46 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game initialization complete for Player -1
+Dec 28, 2024 12:21:46 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game window is now visible. Starting the multiplayer game loop...
+Dec 28, 2024 12:21:51 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Starting multiplayer game with Player ID: -1 and Pac-Man color: null
+Dec 28, 2024 12:21:51 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Initializing game frame for multiplayer...
+Dec 28, 2024 12:21:51 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 28, 2024 12:21:51 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Setting up game controller and multiplayer game...
+Dec 28, 2024 12:21:51 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game initialization complete for Player -1
+Dec 28, 2024 12:21:51 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game window is now visible. Starting the multiplayer game loop...
+Dec 28, 2024 12:21:56 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Starting multiplayer game with Player ID: -1 and Pac-Man color: null
+Dec 28, 2024 12:21:56 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Initializing game frame for multiplayer...
+Dec 28, 2024 12:21:56 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 28, 2024 12:21:56 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Setting up game controller and multiplayer game...
+Dec 28, 2024 12:21:56 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game initialization complete for Player -1
+Dec 28, 2024 12:21:56 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game window is now visible. Starting the multiplayer game loop...
+Dec 28, 2024 12:27:30 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Starting multiplayer game with Player ID: -1 and Pac-Man color: null
+Dec 28, 2024 12:27:30 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Initializing game frame for multiplayer...
+Dec 28, 2024 12:27:30 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner initializeGameFrame
+INFO: Game frame initialized with size: 608x352
+Dec 28, 2024 12:27:30 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Setting up game controller and multiplayer game...
+Dec 28, 2024 12:27:30 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game initialization complete for Player -1
+Dec 28, 2024 12:27:31 PM game.gameRunner.MultiPlayerRunner.MultiPlayerRunner startMultiplayerGame
+INFO: Game window is now visible. Starting the multiplayer game loop...

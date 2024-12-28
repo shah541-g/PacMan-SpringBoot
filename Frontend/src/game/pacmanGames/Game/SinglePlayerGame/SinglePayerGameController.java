@@ -5,24 +5,24 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import javax.swing.Timer;
+import javax.swing.*;
 
 import customExceptions.gameExceptions.AnimationFrameException;
 import customExceptions.gameExceptions.InvalidStateException;
 import game.pacmanGames.entity.Enums.Directions;
 import game.pacmanGames.imagesLoader.ImagesLoader;
 import game.pacmanGames.movementEngine.MovementManager;
+import pages.GameOutcomePage;
 
 public class SinglePayerGameController implements ActionListener,KeyListener{
 
     private SinglePlayerGame game;
     private Timer gameloop;
+    private JFrame frame;  // Add a reference to the JFrame
 
-    
-    public SinglePayerGameController(){
-
-        gameloop = new Timer(50,this);
-        
+    public SinglePayerGameController(JFrame frame) {
+        this.frame = frame;
+        gameloop = new Timer(50, this);
     }
 
     public void init(SinglePlayerGame game){
@@ -94,7 +94,22 @@ public class SinglePayerGameController implements ActionListener,KeyListener{
             e1.printStackTrace();
         }
         game.getGamePanel().repaint();
-        if(SinglePlayerGameStatus.isGameOver()){
+
+        if(SinglePlayerGameStatus.isGameOver() || game.getFoods().isEmpty()){
+
+            SinglePlayerGameStatus.setScore(game.getYellowPacman().getScore());
+            if(game.getFoods().isEmpty()){
+                SinglePlayerGameStatus.setGameOutcome("WIN");
+            }
+            else{
+                SinglePlayerGameStatus.setGameOutcome("LOSE");
+            }
+                System.out.println(SinglePlayerGameStatus.getGameOutcome());
+
+            SwingUtilities.invokeLater(() -> {
+             new GameOutcomePage(SinglePlayerGameStatus.getGameOutcome(),frame);
+            });
+            SinglePlayerGameStatus.updateGameStatus(false);
             gameloop.stop();
         }
     }
@@ -113,7 +128,7 @@ public class SinglePayerGameController implements ActionListener,KeyListener{
 
 
         if (SinglePlayerGameStatus.isGameOver()){
-           
+
             restartingGame();
         }
 

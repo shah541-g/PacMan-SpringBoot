@@ -24,7 +24,7 @@ public class MultiPlayerGame {
     private Map map;
     
     private JPanel gamePanel;
-    
+
 
     public MultiPlayerGame(MultiPlayerGameController gameController) {
 
@@ -36,6 +36,7 @@ public class MultiPlayerGame {
 
         initPanel();
         configurePanel();
+        assert gamePanel != null;
         gamePanel.addKeyListener(gameController);
         gamePanel.setFocusable(true);
         initAttributes();
