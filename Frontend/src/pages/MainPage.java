@@ -1,26 +1,27 @@
 package pages;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.Font;
+import java.awt.*;
 
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import javax.swing.*;
 
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
+import com.sun.tools.javac.Main;
+import org.json.JSONObject;
+import player.Player;
+import utils.requestUtilities.HttpUtil;
 
-import game.gameRunner.MultiPlayerRunner.MultiPlayerRunner;
-import game.gameRunner.SinglePlayerRunner.SinglePlayerRunner;
+import static pages.PersonalDetailsPage.showPersonalDetails;
+import static pages.SinglePlayerGameDetailsPage.showSinglePlayerGameDetailsPage;
+import static widgetFactories.CardFactory.getMultiplayerCard;
+import static widgetFactories.CardFactory.getSinglePlayerCard;
+import static widgetFactories.FrameFactory.getColoredFrame;
 
 public class MainPage {
+
+    static JFrame frame;
 
     public MainPage(){
 
@@ -28,91 +29,147 @@ public class MainPage {
     }
 
     private void showHomePage(){
-         // Create the main frame
-        JFrame frame = new JFrame("Game Menu");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 600); // Set frame size
-        frame.setLocationRelativeTo(null); // Center the frame
-        frame.setLayout(null); // Use absolute positioning
 
-        // Set the background color of the content pane to black
-        frame.getContentPane().setBackground(Color.BLACK);
+        getDetails();
+
+        // get frame
+        frame = getColoredFrame("Game Menu", 800, 600, Color.BLACK);
 
         // Create a panel for the top left buttons
+        JPanel buttonPanel = getButtonPanel();
+
+        // Add the button panel to the frame
+        frame.add(buttonPanel);
+
+        // Create a panel for the "Single game.Player Game" card
+        JPanel singlePlayerCard = getSinglePlayerCard(frame);
+
+        // Create a panel for the "Multiplayer Game" card
+        JPanel multiplayerCard = getMultiplayerCard(frame);
+
+        // Add the cards to the frame
+        frame.add(singlePlayerCard);
+        frame.add(multiplayerCard);
+
+
+        // Make the frame visible
+        frame.setVisible(true);
+    }
+
+    private static JPanel getButtonPanel() {
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
         buttonPanel.setBounds(0, 0, 800, 35); // Position and size
 
         // Create buttons
         JButton button1 = new JButton("View Personal Details");
-        JButton button2 = new JButton("Games History");
         JButton button3 = new JButton("Score");
+
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+               showPersonalDetails(frame);
+            }
+        });
+
+
+        JComboBox<String> gameHistoryComboBox = getGameHistoryComboBox();
 
         // Add buttons to the panel
         buttonPanel.add(button1);
-        buttonPanel.add(button2);
+        buttonPanel.add(gameHistoryComboBox);
         buttonPanel.add(button3);
-
-        // Add the button panel to the frame
-        frame.add(buttonPanel);
-
-        // Create a panel for the "Single game.Player Game" card
-        JPanel singlePlayerCard = new JPanel();
-        singlePlayerCard.setBounds(100, 200, 250, 150); // Position and size
-        singlePlayerCard.setBackground(new Color(173, 216, 230)); // Light blue color
-        singlePlayerCard.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
-
-        JLabel singlePlayerLabel = new JLabel("Single game.Player Game", SwingConstants.CENTER);
-        singlePlayerLabel.setFont(new Font("Arial", Font.BOLD, 18));
-        singlePlayerCard.setLayout(new BorderLayout());
-        singlePlayerCard.add(singlePlayerLabel, BorderLayout.CENTER);
-
-        // Add a click event to the Single game.Player card
-        singlePlayerCard.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                // JOptionPane.showMessageDialog(frame, "Single game.Player Game clicked!");
-                // // You can launch the single-player game here
-
-                
-                // new Thread(SinglePlayerRunner::new).start();
-
-                 JOptionPane.showMessageDialog(frame, "Single game.Player Game clicked!");
-                // Use SwingUtilities.invokeLater to safely start the background task
-                SwingUtilities.invokeLater(() -> new SinglePlayerRunner());
-            }
-        });
-
-        // Create a panel for the "Multiplayer Game" card
-        JPanel multiplayerCard = new JPanel();
-        multiplayerCard.setBounds(450, 200, 250, 150); // Position and size
-        multiplayerCard.setBackground(new Color(144, 238, 144)); // Light green color
-        multiplayerCard.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
-
-        JLabel multiplayerLabel = new JLabel("Multiplayer Game", SwingConstants.CENTER);
-        multiplayerLabel.setFont(new Font("Arial", Font.BOLD, 18));
-        multiplayerCard.setLayout(new BorderLayout());
-        multiplayerCard.add(multiplayerLabel, BorderLayout.CENTER);
-
-        // Add a click event to the Multiplayer card
-        multiplayerCard.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                // JOptionPane.showMessageDialog(frame, "Multiplayer Game clicked!");
-                // // You can launch the multiplayer game here
-                // new Thread(MultiPlayerRunner::new).start();
-
-                JOptionPane.showMessageDialog(frame, "MultiPlayer Game clicked!");
-                // Use SwingUtilities.invokeLater to safely start the background task
-                SwingUtilities.invokeLater(() -> new MultiPlayerRunner());
-            }
-        });
-
-        // Add the cards to the frame
-        frame.add(singlePlayerCard);
-        frame.add(multiplayerCard);
-
-        // Make the frame visible
-        frame.setVisible(true);
+        return buttonPanel;
     }
+
+    private static void fetchSinglePlayerGameDetails() {
+        // Get the email from the Player object
+        String email = Player.getEmail();
+
+        // Construct the URL to fetch single-player game details by email
+        String urlString = "http://localhost:8080/api/single-player-games/player/" + URLEncoder.encode(email, StandardCharsets.UTF_8);
+
+        // Send GET request
+        String jsonResponse = HttpUtil.sendGetRequest(urlString);
+
+        // Check if the response is not null or empty and display the results
+        if (jsonResponse != null && !jsonResponse.isEmpty()) {
+            showSinglePlayerGameDetailsPage(jsonResponse);
+        } else {
+            JOptionPane.showMessageDialog(null, "Failed to fetch Single Player Game details", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private static JComboBox<String> getGameHistoryComboBox() {
+        String[] gameHistoryOptions = {"Games History", "Single Player Game", "Multiplayer Game"};
+        JComboBox<String> gameHistoryComboBox = new JComboBox<>(gameHistoryOptions);
+        gameHistoryComboBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String selectedOption = (String) gameHistoryComboBox.getSelectedItem();
+                if ("Single Player Game".equals(selectedOption)) {
+                    fetchSinglePlayerGameDetails();
+                } else if ("Multiplayer Game".equals(selectedOption)) {
+                    fetchMultiplayerGameDetails();
+                }
+            }
+        });
+        return gameHistoryComboBox;
+    }
+
+    private static void fetchMultiplayerGameDetails() {
+        String email = Player.getEmail();
+        String urlString = "http://localhost:8080/api/multiplayer-game/player/" + URLEncoder.encode(email, StandardCharsets.UTF_8);
+        String jsonResponse = HttpUtil.sendGetRequest(urlString);
+
+        if (jsonResponse != null) {
+            JOptionPane.showMessageDialog(null, "Multiplayer Game Details: " + jsonResponse);
+        } else {
+            JOptionPane.showMessageDialog(null, "Failed to fetch Multiplayer Game details", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private static void getDetails(){
+
+
+        String email = Player.getEmail();
+        String urlString = "http://localhost:8080/api/users/my-details?email=" + URLEncoder.encode(email, StandardCharsets.UTF_8);
+        String jsonResponse = HttpUtil.sendGetRequest(urlString);
+        boolean success = parsePlayerDetails(jsonResponse);
+
+        if (!success){
+            JOptionPane.showMessageDialog(null, "Error", "Error", JOptionPane.ERROR_MESSAGE);
+
+        }
+    }
+
+
+
+
+    private static boolean parsePlayerDetails(String jsonResponse) {
+        try {
+            if (jsonResponse != null && !jsonResponse.isEmpty()) {
+                // Create a JSONObject from the response string
+                JSONObject jsonObject = new JSONObject(jsonResponse);
+
+                // Extract player details
+                String username = jsonObject.getString("username");
+                String email = jsonObject.getString("email");
+
+                // Set player details
+                Player.setUsername(username);
+                Player.setEmail(email);
+
+                return true;
+            } else {
+                return false; // Invalid response
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false; // Error during parsing
+        }
+    }
+
+
 }

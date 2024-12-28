@@ -14,35 +14,59 @@ public class MultiPlayerRunner {
     private static final Logger LOGGER = LoggerUtility.getLogger("MultiPlayerRunner","MultiPlayerRunner.log");
 
     public MultiPlayerRunner() {
+
+    }
+
+    public static void startMultiplayerGame(int playerId, String pacmanColor) {
+        LOGGER.info("Starting multiplayer game with Player ID: " + playerId + " and Pac-Man color: " + pacmanColor);
+
         try {
-            LOGGER.info("Launching Multi game.Player Pac-Man game...");
-            launchMultiPlayerGame();
+            LOGGER.info("Initializing game frame for multiplayer...");
+            JFrame frame = initializeGameFrame();
+
+            LOGGER.info("Setting up game controller and multiplayer game...");
+            MultiPlayerGameController gameController = new MultiPlayerGameController(playerId, pacmanColor);
+            MultiPlayerGame game = new MultiPlayerGame(gameController);
+
+            gameController.init(game);
+            LOGGER.info("Game initialization complete for Player " + playerId);
+
+            frame.add(game.getGamePanel());
+
+            frame.pack();
+            game.getGamePanel().requestFocusInWindow();
+            frame.setVisible(true);
+
+            LOGGER.info("Game window is now visible. Starting the multiplayer game loop...");
+            gameController.startGame();
+
         } catch (Exception e) {
-            LOGGER.log(Level.SEVERE, "An error occurred while launching the game", e);
+            LOGGER.log(Level.SEVERE, "An error occurred while starting the multiplayer game", e);
         }
     }
 
-    private static void launchMultiPlayerGame() {
-        
-        LOGGER.info("Initializing game frame...");
-        JFrame frame = initializeGameFrame();
 
-        LOGGER.info("Setting up game controller and game...");
-        MultiPlayerGameController gameController = new MultiPlayerGameController();
-        MultiPlayerGame game = new MultiPlayerGame(gameController);
-
-        gameController.init(game);
-        LOGGER.info("Game initialization complete.");
-
-        frame.add(game.getGamePanel());
-
-        frame.pack();
-        game.getGamePanel().requestFocusInWindow();
-        frame.setVisible(true);
-
-        LOGGER.info("Game window is now visible. Starting the game loop...");
-        gameController.startGame();
-    }
+//    private static void launchMultiPlayerGame() {
+//
+//        LOGGER.info("Initializing game frame...");
+//        JFrame frame = initializeGameFrame();
+//
+//        LOGGER.info("Setting up game controller and game...");
+//        MultiPlayerGameController gameController = new MultiPlayerGameController();
+//        MultiPlayerGame game = new MultiPlayerGame(gameController);
+//
+//        gameController.init(game);
+//        LOGGER.info("Game initialization complete.");
+//
+//        frame.add(game.getGamePanel());
+//
+//        frame.pack();
+//        game.getGamePanel().requestFocusInWindow();
+//        frame.setVisible(true);
+//
+//        LOGGER.info("Game window is now visible. Starting the game loop...");
+//        gameController.startGame();
+//    }
 
     private static JFrame initializeGameFrame() {
         

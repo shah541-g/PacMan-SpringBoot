@@ -15,10 +15,14 @@ public class MultiPlayerGameController implements ActionListener,KeyListener{
 
     private MultiPlayerGame game;
     private Timer gameloop;
+    private int playerId;
+    private String pacmanColor;
 
     
-    public MultiPlayerGameController(){
+    public MultiPlayerGameController(int playerID, String pacmanColor){
 
+        this.playerId = playerID;
+        this.pacmanColor = pacmanColor;
         gameloop = new Timer(50,this);
         
     }

@@ -1,12 +1,15 @@
 package game.gameRunner.SinglePlayerRunner;
 
 import javax.swing.JFrame;
+import java.sql.Timestamp;
+import java.time.Instant;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 
 import game.pacmanGames.Game.SinglePlayerGame.SinglePayerGameController;
 import game.pacmanGames.Game.SinglePlayerGame.SinglePlayerGame;
 import game.pacmanGames.Game.SinglePlayerGame.SinglePlayerGameBoard;
+import game.pacmanGames.Game.SinglePlayerGame.SinglePlayerGameStatus;
 import utils.loggingUtilities.LoggerUtility;
 
 public class SinglePlayerRunner {
@@ -29,7 +32,7 @@ public class SinglePlayerRunner {
         JFrame frame = initializeGameFrame();
 
         LOGGER.info("Setting up game controller and game...");
-        SinglePayerGameController gameController = new SinglePayerGameController();
+        SinglePayerGameController gameController = new SinglePayerGameController(frame);
         SinglePlayerGame game = new SinglePlayerGame(gameController);
 
         gameController.init(game);
@@ -40,7 +43,7 @@ public class SinglePlayerRunner {
         frame.pack();
         game.getGamePanel().requestFocusInWindow();
         frame.setVisible(true);
-
+        SinglePlayerGameStatus.setIsGameRunning(true);
         LOGGER.info("Game window is now visible. Starting the game loop...");
         gameController.startGame();
     }

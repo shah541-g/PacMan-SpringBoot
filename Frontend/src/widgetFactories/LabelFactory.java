@@ -22,5 +22,16 @@ public class LabelFactory {
         return labelBox;
     }
 
+    public static JLabel getCustomLabel(String message, Color color, int fontSize){
+
+        JLabel customLabel = new JLabel();
+        customLabel.setText(message);
+        customLabel.setFont(new Font("Arial", Font.BOLD, fontSize));
+        customLabel.setForeground(color);
+        customLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        return customLabel;
+    }
+
 
 }
