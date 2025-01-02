@@ -24,7 +24,7 @@ public class SignInController {
     @PostMapping("/signin")
     public ResponseEntity<?> signIn(@RequestBody UserSignInRequest request) {
         UserSignInResponse response = userService.verifyUser(request);
-        if(response.getResponse().equals("already Signed In")){
+        if(response==null || response.getResponse().equals("already Signed In")){
             return ResponseEntity.badRequest().body(response);
         }
         return ResponseEntity.ok(response);

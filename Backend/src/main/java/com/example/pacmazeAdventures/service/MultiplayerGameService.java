@@ -3,15 +3,14 @@ package com.example.pacmazeAdventures.service;
 import com.example.pacmazeAdventures.DTO.MultiplayerGameDTO.GameRequestDTO;
 import com.example.pacmazeAdventures.DTO.MultiplayerGameDTO.RoomKeyRequestDTO;
 import com.example.pacmazeAdventures.entity.MultiplayerGame;
-import com.example.pacmazeAdventures.model.DesiredRoom;
-import com.example.pacmazeAdventures.model.Room;
+import com.example.pacmazeAdventures.entity.DesiredRoom;
+import com.example.pacmazeAdventures.entity.Room;
 import com.example.pacmazeAdventures.repository.DesiredRoomRepository;
 import com.example.pacmazeAdventures.repository.MultiplayerGameRepository;
 import com.example.pacmazeAdventures.repository.RoomRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -65,10 +64,7 @@ public class MultiplayerGameService {
     public boolean validateEmail(RoomKeyRequestDTO request) {
         DesiredRoom room = desiredRooms.findDesiredRoomByKey(request.getRoomKey());
 
-        if(room.getPlayer1Email().equals(request.getEmail()) || room.getPlayer2Email().equals(request.getEmail())){
-            return true;
-        }
-        return false;
+        return room.getPlayer1Email().equals(request.getEmail()) || room.getPlayer2Email().equals(request.getEmail());
     }
 
     public int assignPlayerRole(String roomKey, String email, String playerIp) {
