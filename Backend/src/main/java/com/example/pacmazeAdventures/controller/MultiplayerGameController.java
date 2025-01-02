@@ -1,8 +1,7 @@
 package com.example.pacmazeAdventures.controller;
 
 import com.example.pacmazeAdventures.DTO.MultiplayerGameDTO.*;
-import com.example.pacmazeAdventures.DTO.SignInDTO.UserSignInResponse;
-import com.example.pacmazeAdventures.model.Room;
+import com.example.pacmazeAdventures.entity.Room;
 import com.example.pacmazeAdventures.service.MultiplayerGameService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

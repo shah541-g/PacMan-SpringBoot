@@ -1,4 +1,4 @@
-package com.example.pacmazeAdventures.model;
+package com.example.pacmazeAdventures.entity;
 
 public class DesiredRoom {
 

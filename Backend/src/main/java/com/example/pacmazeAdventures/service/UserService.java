@@ -65,14 +65,14 @@ public class UserService {
         Optional<User> user = userRepository.findByEmail(request.getEmail());
 
         if (user.isEmpty()) {
-            return null;
+            return new UserSignInResponse("No Such Account Exists");
         }
 
         // Verify password using BCryptPasswordEncoder
         if (passwordEncoder.matches(request.getPassword(), user.get().getPassword())) {
             // Add to signed-in users list
             signedInUsers.add(request.getEmail());
-            return new UserSignInResponse("Sign In Successfull");
+            return new UserSignInResponse("Sign In Successfully");
         }
 
         return null;

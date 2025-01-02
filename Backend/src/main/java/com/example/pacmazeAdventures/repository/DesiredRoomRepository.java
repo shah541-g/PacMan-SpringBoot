@@ -1,6 +1,6 @@
 package com.example.pacmazeAdventures.repository;
 
-import com.example.pacmazeAdventures.model.DesiredRoom;
+import com.example.pacmazeAdventures.entity.DesiredRoom;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
