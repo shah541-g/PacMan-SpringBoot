@@ -36,7 +36,7 @@ The system uses a client-server architecture:
 ### **Backend**
 - Java 17+
 - Maven 3.8+
-- PostgreSQL (optional for persistent storage)
+- MySQL 
 
 ---
 
