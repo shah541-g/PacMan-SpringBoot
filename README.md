@@ -1,6 +1,4 @@
-Here’s a comprehensive README for the entire system of *PacMaze Adventures*, integrating both backend and frontend, along with a syntax-based description to ensure clarity:
 
----
 
 # **PacMaze Adventures**
 
